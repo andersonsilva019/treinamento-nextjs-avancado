@@ -21,6 +21,7 @@ module.exports = {
         100: '#e1e1e6',
         300: '#a8a8b3',
         800: '#29292e',
+        850: '#1f2729',
         900: '#121214'
       },
       yellow:{
@@ -30,11 +31,16 @@ module.exports = {
     extend: {
       lineHeight: {
         '16': '5rem',
+      },
+      borderRadius: {
+        '3': '3rem'
       }
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      filter: ['hover', 'focus'],
+    },
   },
   plugins: [],
 }
