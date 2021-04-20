@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { SubscribeButton } from '../components/SubscribeButton'
 import { stripe } from '../services/stripe'
@@ -31,8 +31,8 @@ export default function Home({product}: HomeProps) {
   )
 }
 
-// SSR
-export const getServerSideProps: GetServerSideProps = async () => {
+// SSG
+export const getStaticProps: GetStaticProps = async () => {
 
   const price = await stripe.prices.retrieve('price_1Ii0c8DJo4ir0TdcZjs0icd0')
 
@@ -47,6 +47,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
       product
-    }
+    }, 
+    revalidate: 60 * 60 * 24 // 24h
   }
 }
