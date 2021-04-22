@@ -3,9 +3,9 @@ import { FiX } from 'react-icons/fi'
 import { signIn, useSession, signOut } from 'next-auth/client'
 export function SignInButton(){
 
-  const [sesison] = useSession()
+  const [session] = useSession()
 
-  return sesison ? (
+  return session ? (
     <button 
       onClick={() => signOut()}
       type="button" 
@@ -26,7 +26,7 @@ export function SignInButton(){
         "
     >
       <FaGithub color="#04d361" className="w-5 h-5 mr-4 "/>
-      {sesison.user.name}
+      {session.user.name}
       <FiX color="#737380" className="ml-4"/>
     </button>
   ) : (
