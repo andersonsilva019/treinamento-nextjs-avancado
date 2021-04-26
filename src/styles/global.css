@@ -6,3 +6,21 @@ body {
   @apply bg-gray-900; 
   @apply text-white;
 }
+
+@layer components {
+  .postContent > p,ul{
+    @apply my-6 mx-0;
+  }
+  .postContent > ul {
+    @apply pl-6;
+  }
+
+  .postContent > ul li {
+    margin: 0.5rem 0;
+  }
+
+  .previewContent {
+    @apply bg-gradient-to-b from-gray-100 to-transparent bg-clip-text;
+    -webkit-text-fill-color: transparent;
+  }
+}
