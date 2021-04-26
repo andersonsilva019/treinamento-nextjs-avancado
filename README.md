@@ -1,5 +1,5 @@
 
-Veja mais sobre cada proejto:
+Veja mais sobre as tecnologias utilizadas em cada projeto:
 
 - [IGNEWS](ignews/DOCS.md)
 
