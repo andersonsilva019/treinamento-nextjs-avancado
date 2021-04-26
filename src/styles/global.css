@@ -18,4 +18,9 @@ body {
   .postContent > ul li {
     margin: 0.5rem 0;
   }
+
+  .previewContent {
+    @apply bg-gradient-to-b from-gray-100 to-transparent bg-clip-text;
+    -webkit-text-fill-color: transparent;
+  }
 }
