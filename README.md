@@ -20,7 +20,7 @@
 
 Veja mais sobre as tecnologias utilizadas em cada projeto:
 
-- [Blog](ignews/DOCS.md)
+- [Blog](blog/DOCS.md)
 
 
 ## Como contribuir
