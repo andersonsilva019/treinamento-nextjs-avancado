@@ -1,7 +1,7 @@
 
 Veja mais sobre as tecnologias utilizadas em cada projeto:
 
-- [IGNEWS](ignews/DOCS.md)
+- [Blog](ignews/DOCS.md)
 
 
 ## Como contribuir
