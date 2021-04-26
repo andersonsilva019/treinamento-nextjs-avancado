@@ -26,10 +26,9 @@ export default function Posts({ posts }: PostProps) {
       <main className="max-w-5xl my-0 mx-auto py-0 px-8">
         <div className="max-w-3xl mt-20 mx-auto">
           {posts.map((post, index) => (
-            <Link href={`/posts/${post.slug}`}>
+            <Link href={`/posts/${post.slug}`} key={post.slug}>
               <a
                 className={`group block mb-8 pt-8 ${index !== 0 ? 'border-t' : ''} border-gray-700`}
-                key={post.slug}
               >
                 <time className="text-base flex items-center text-gray-300">
                   {post.updatedAt}
