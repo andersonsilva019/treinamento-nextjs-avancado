@@ -7,25 +7,6 @@
 </p>
 
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/andersonsilva019/treinamento-nextjs-avancado">
-  
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/andersonsilva019/treinamento-nextjs-avancado">
-  
-  <a href="https://github.com/andersonsilva019/blog/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/andersonsilva019/treinamento-nextjs-avancado">
-  </a>
-  
-  <a href="https://github.com/andersonsilva019/blog/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/andersonsilva019/treinamento-nextjs-avancado">
-  </a>
-
-   <a href="https://github.com/andersonsilva019/Netflix-clone-study/pulls">
-    <img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed/andersonsilva019/treinamento-nextjs-avancado">
-  </a>
-
-</p>
-
-<p align="center">
   <a href="#sobre-o-projeto">Sobre o projeto</a>
   |
   <a href="#tecnologias">Tecnologias</a>
