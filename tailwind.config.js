@@ -1,6 +1,6 @@
 module.exports = {
   purge: [
-    './src/**/*.{js,ts,jsx,tsx,html}', 
+    './src/**/*.{js,ts,jsx,tsx,html}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: false, // or 'media' or 'class'
@@ -20,11 +20,12 @@ module.exports = {
       gray: {
         100: '#e1e1e6',
         300: '#a8a8b3',
+        700: '#323238',
         800: '#29292e',
         850: '#1f2729',
         900: '#121214'
       },
-      yellow:{
+      yellow: {
         500: '#eba417',
       }
     },
