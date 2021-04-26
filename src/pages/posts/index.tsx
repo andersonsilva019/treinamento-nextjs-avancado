@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import Link from "next/link";
 import Prismic from '@prismicio/client'
 import { RichText } from 'prismic-dom'
 import Head from "next/head";
@@ -25,23 +26,24 @@ export default function Posts({ posts }: PostProps) {
       <main className="max-w-5xl my-0 mx-auto py-0 px-8">
         <div className="max-w-3xl mt-20 mx-auto">
           {posts.map((post, index) => (
-            <a
-              className={`group block mb-8 pt-8 ${index !== 0 ? 'border-t' : ''} border-gray-700`}
-              href="#"
-              key={post.slug}
-            >
-              <time className="text-base flex items-center text-gray-300">
-                {post.updatedAt}
-              </time>
-              <strong
-                className="block text-2xl mt-4 leading-8 group-hover:text-yellow-500 transition-all duration-200"
+            <Link href={`/posts/${post.slug}`}>
+              <a
+                className={`group block mb-8 pt-8 ${index !== 0 ? 'border-t' : ''} border-gray-700`}
+                key={post.slug}
               >
-                {post.title}
-              </strong>
-              <p className="text-gray-300 mt-2 leading-6 ">
-                {post.excerpt}
-              </p>
-            </a>
+                <time className="text-base flex items-center text-gray-300">
+                  {post.updatedAt}
+                </time>
+                <strong
+                  className="block text-2xl mt-4 leading-8 group-hover:text-yellow-500 transition-all duration-200"
+                >
+                  {post.title}
+                </strong>
+                <p className="text-gray-300 mt-2 leading-6 ">
+                  {post.excerpt}
+                </p>
+              </a>
+            </Link>
           ))}
         </div>
       </main>
@@ -71,9 +73,6 @@ export const getStaticProps: GetStaticProps = async () => {
       })
     }
   })
-
-  console.log(response)
-
   return {
     props: {
       posts
