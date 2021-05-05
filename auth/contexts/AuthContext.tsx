@@ -1,5 +1,12 @@
-import { createContext, ReactNode, useContext } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
+import Routes from 'next/router'
 import { http } from "../services/http";
+
+type User = {
+  email: string
+  permissions: string[]
+  roles: string[]
+}
 
 type SignInCredentials = {
   email: string
@@ -7,8 +14,9 @@ type SignInCredentials = {
 }
 
 type AuthContextData = {
-  signIn(credentials: SignInCredentials): Promise<void>
+  user: User
   isAuthenticated: boolean
+  signIn(credentials: SignInCredentials): Promise<void>
 }
 
 type AuthContextProviderProps = {
@@ -20,7 +28,8 @@ const AuthContext = createContext({} as AuthContextData)
 
 export function AuthContextProvider({ children }: AuthContextProviderProps) {
 
-  const isAuthenticated = false
+  const [user, setUser] = useState<User>()
+  const isAuthenticated = !!user
 
   async function signIn({ email, password }: SignInCredentials) {
     try {
@@ -29,14 +38,23 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
         password
       })
 
-      console.log(response.data)
+      const { permissions, roles } = response.data
+
+      setUser({
+        email,
+        permissions,
+        roles
+      })
+
+      Routes.push('/dashboard')
+
     } catch (error) {
       console.log(error)
     }
   }
 
   return (
-    <AuthContext.Provider value={{ signIn, isAuthenticated }}>
+    <AuthContext.Provider value={{ signIn, isAuthenticated, user }}>
       {children}
     </AuthContext.Provider>
   )
