@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
-import { setCookie, parseCookies } from 'nookies'
-import Routes from 'next/router'
+import { setCookie, parseCookies, destroyCookie } from 'nookies'
+import Router from 'next/router'
 import { http } from "../services/http";
 
 type User = {
@@ -26,6 +26,12 @@ type AuthContextProviderProps = {
 
 const AuthContext = createContext({} as AuthContextData)
 
+export function signOut() {
+  destroyCookie(undefined, 'auth.token')
+  destroyCookie(undefined, 'auth.refreshToken')
+
+  Router.push('/')
+}
 
 export function AuthContextProvider({ children }: AuthContextProviderProps) {
 
@@ -40,6 +46,8 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
         const { email, permissions, roles } = response.data
 
         setUser({ email, permissions, roles })
+      }).catch(() => {
+
       })
     }
 
@@ -71,7 +79,7 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
 
       http.defaults.headers['Authorization'] = `Bearer ${token}`
 
-      Routes.push('/dashboard')
+      Router.push('/dashboard')
 
     } catch (error) {
       console.log(error)
