@@ -13,6 +13,8 @@ export default function Dashboard() {
   })
 
   return (
-    <h1>Dashboard {user?.email}</h1>
+    <div className="h-screen flex items-center justify-center">
+      <h1 className="text-gray-50 text-4xl">Seja bem vindo <strong className="text-yellow-500">{user?.email}</strong></h1>
+    </div>
   )
 }
