@@ -1,5 +1,3 @@
-import { GetServerSideProps } from "next"
-import { parseCookies } from "nookies"
 import { FormEvent, useState } from "react"
 import { useAuth } from "../contexts/AuthContext"
 import { withSSRGuest } from "../helpers/withSSRGuest"
