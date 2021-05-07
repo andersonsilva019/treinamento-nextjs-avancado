@@ -1,6 +1,8 @@
 import { useEffect } from "react"
 import { useAuth } from "../contexts/AuthContext"
-import { http } from "../services/http"
+import { withSSRAuth } from "../helpers/withSSRAuth"
+import { setupHttpClient } from "../services/http"
+import { http } from "../services/httpClient"
 
 export default function Dashboard() {
 
@@ -18,3 +20,14 @@ export default function Dashboard() {
     </div>
   )
 }
+
+export const getServerSideProps = withSSRAuth(async (ctx) => {
+
+  const httpClient = setupHttpClient(ctx)
+  const response = await httpClient.get('/me')
+  console.log(response)
+
+  return {
+    props: {}
+  }
+})
