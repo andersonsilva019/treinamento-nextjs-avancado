@@ -7,7 +7,7 @@ import { http } from "../services/httpClient"
 
 export default function Dashboard() {
 
-  const { user } = useAuth()
+  const { user, signOut } = useAuth()
 
   useEffect(() => {
     http.get('/me')
@@ -21,6 +21,11 @@ export default function Dashboard() {
       <Can permissions={['metrics.list']}>
         <div className="text-gray-50">Métricas</div>
       </Can>
+      <button
+        onClick={signOut}
+        className="py-2 px-4 mt-5 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-md transition-all duration-200"
+        type="submit"
+      >SignOut</button>
     </div>
   )
 }
