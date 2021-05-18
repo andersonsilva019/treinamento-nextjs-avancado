@@ -21,6 +21,10 @@
 Veja mais sobre as tecnologias utilizadas em cada projeto:
 
 - [Blog](blog/DOCS.md)
+- [Dashboard](dashboard/DOCS.md)
+- [Autenticação](auth/DOCS.md)
+- [Performace no react](performance/DOCS.md)
+- [Podcastr](podcastr/DOCS.md)
 
 
 ## Como contribuir

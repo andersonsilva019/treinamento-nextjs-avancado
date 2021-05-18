@@ -18,7 +18,7 @@
 
 ## Sobre o projeto
 
-O ignews é uma aplicação desenvolvida no treinamento da rocketseat. Utilizei este projeto para aprender uma ferramenta que traz uma maior produtividade na criação de estilos para os nossos componentes. Nesse caso, foi o **Tailwindcss**. Foi um desafio aprender está ferramenta e gostei bastante do resultado que obtive. 
+O ignews é uma aplicação desenvolvida no treinamento da rocketseat. Utilizei este projeto para aprender uma ferramenta que traz uma maior produtividade na criação de estilos para os nossos componentes. Nesse caso, foi o **Tailwindcss**. Foi um desafio aprender está ferramenta e gostei bastante do resultado que obtive. Além de utilizar o Tailwindcss, aprendi também a utilização das [API Routes](https://nextjs.org/docs/api-routes/introduction) para construir API no Nextjs. 
 
 ## Tecnologias
 
