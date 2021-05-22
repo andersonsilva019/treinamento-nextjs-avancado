@@ -4,13 +4,13 @@ import { SubscribeButton } from '../components/SubscribeButton'
 import { stripe } from '../services/stripe'
 
 type HomeProps = {
-  product:{
+  product: {
     priceId: string,
-    amount: number,
+    amount: string,
   }
 }
 
-export default function Home({product}: HomeProps) {
+export default function Home({ product }: HomeProps) {
   return (
     <>
       <Head>
@@ -20,12 +20,12 @@ export default function Home({product}: HomeProps) {
         <section className="max-w-xl">
           <span className="text-2xl font-bold">Hey, welcome</span>
           <h1 className="text-7xl leading-16 font-black mt-10 ">News about the <span className="text-cyan-500">React</span> world.</h1>
-          <p className="text-2xl leading-9 mt-6">Get acess to all the publications <br/> 
-          <span className="text-cyan-500 font-bold">for {product.amount} month</span>
+          <p className="text-2xl leading-9 mt-6">Get acess to all the publications <br />
+            <span className="text-cyan-500 font-bold">for {product.amount} month</span>
           </p>
-          <SubscribeButton priceId={product.priceId}/>
+          <SubscribeButton />
         </section>
-        <img src="/images/avatar.svg" alt="Girl Coding"/>
+        <img src="/images/avatar.svg" alt="Girl Coding" />
       </main>
     </>
   )
@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const product = {
     priceId: price.id,
-    amount: new Intl.NumberFormat('en-US',{
+    amount: new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD'
     }).format(price.unit_amount / 100),
@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       product
-    }, 
+    },
     revalidate: 60 * 60 * 24 // 24h
   }
 }
