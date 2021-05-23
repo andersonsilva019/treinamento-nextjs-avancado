@@ -3,7 +3,7 @@ import { mocked } from 'ts-jest/utils'
 import { useSession } from 'next-auth/client'
 import { SignInButton } from './SignInButton'
 
-jest.mock('next-auth/client',)
+jest.mock('next-auth/client')
 
 describe('<SignInButton/>', () => {
   it('renders correctly when user is not authenticated', () => {
