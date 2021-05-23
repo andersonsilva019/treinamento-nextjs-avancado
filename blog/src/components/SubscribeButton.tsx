@@ -3,11 +3,9 @@ import { useRouter } from "next/dist/client/router"
 import { api } from "../services/api"
 import { getStripeJs } from "../services/stripe-client"
 
-type SubscribeButtonProps = {
-  priceId: string
-}
 
-export function SubscribeButton({ priceId }: SubscribeButtonProps) {
+
+export function SubscribeButton() {
 
   const [session] = useSession()
   const router = useRouter()
