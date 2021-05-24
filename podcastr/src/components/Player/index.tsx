@@ -76,6 +76,7 @@ export function Player() {
             width={592}
             height={592}
             src={episode.thumbnail}
+            alt="thumbnail"
             objectFit="cover"
           />
           <strong>{episode.title}</strong>
@@ -109,6 +110,7 @@ export function Player() {
 
         {episode && (
           <audio
+            data-testid="#audio"
             src={episode.url}
             autoPlay
             onEnded={handleEpisodeEnded}
